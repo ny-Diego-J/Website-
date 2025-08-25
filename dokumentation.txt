@@ -1,15 +1,12 @@
 1.Tag
-    wir haben eine kleine enfache präsi erstellt um zu überzeugen dass
-    wir dieses projekt machen werden. Wir wollen eine website machen
-    welche den Android plushie vorstell wechen wir von goolge bekmmen haben.
-    Diese Website soll effecte habe wenn man z.b. scollt oder etwas anklickt.
+    wir haben eine kleine, einfache Präsentation von unserem Projekt erstellt. 
+    Wir wollen eine Website machen, welche den Android Plushie den wir von Google bekommen haben vorstellen wird.
+    Diese Website soll Effekte und Animationen haben wenn man zum Beispiel srcollt oder etwas anklickt.
     
-1. problehm
-    beim setup von visual studio code hatten wir ein problehm da wir
-    visul studio mit git hub verbinden wollten und es nicht funktionieret
-    hat Diego und Fillip haben dann nach einer lösung gesucht und es dann irgend wann
-    geschafft github mit visual studio zu verbinden. 
-    Filip hat es nicht geschafft und will jetzt die Ausbildung abbrechen.
+1. Problem
+    Beim Setup von Visual Studio Code hatten wir ein Problem. Wir
+    wollten Visual Studio mit Github verbinden. Es hat nicht funktioniert, Diego und Filip haben dann lange nach einer Lösung gesucht 
+    und dann geschafft es zu funktionieren zu brringen.
 
 1. Tag Ideen
-    Wir wollen unseren Plushie vorstellen und ihn "Advertisen". Wir wollen auch coole effecte haben.
+    Wir wollen unseren Plushie vorstellen und ihn "Advertisen". Wir wollen auch coole Effekte haben.

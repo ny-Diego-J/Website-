@@ -67,14 +67,8 @@ body {
   height: fit-content;
   right: 0%;
   top: 65%;
+  text-align: center;
 }
-
-
-.ruby {
-  width: 100px;
-  height: auto;
-}
-
 
 .heading {
   background-color: black;
@@ -90,12 +84,22 @@ body {
   bottom: 2%;
 }
 
+.ruby {
+  width: 100px;
+  height: auto;
+  margin: auto;
+}
+
 .michelin {
   width: 150px;
   height: auto;
+  margin: auto;
 }
 
 .oscar {
   height: 150px;
   width: auto;
+  margin: auto;
 }
+
+

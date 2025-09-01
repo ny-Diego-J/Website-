@@ -1,13 +1,17 @@
 function mainloop(){
 
-    if(scrollY > 100){
-        console.log("test complete");
-    }
     
-    document.getElementById("test").style.left = scrollY;
+    if(scrollY < 300){
+        document.getElementById("androidico").style.left = scrollY*3;
+        document.getElementById("androidico").style.top =  100 -scrollY;
+        document.getElementById("androidico").style.width = 145%;
+    }
+        
+
+    
 
 
 
 }
 
-setInterval(mainloop,1000);
+setInterval(mainloop,1);

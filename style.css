@@ -12,6 +12,19 @@ p {
   color: #08c725;
 }
 
+.heading {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 80px;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px;
+  z-index: 1000;
+}
 
 .Rick{
   position: absolute;
@@ -26,11 +39,13 @@ p {
 } 
 
 .scroll-container{
+  position: relative;
   background-color: transparent;
-  margin-top: 150px;
+  margin-top: 180px;
   display: flex;
   justify-content: flex-start;
   padding-left: 20px;
+  height: 400px;
 }
 
 .bottom {
@@ -46,17 +61,28 @@ p {
 } 
 
 .android {
-  position: static;
+  position: fixed;
   top: 160px;
   left: 20px;
-  max-width: 400px;
-  width: 200px;
+  max-width: 300px;
+  width: auto;
   height: auto;
   z-index: 900;
   padding: 10px;
-  transition: top 0.2s linear, left 0.2s linear, transform 0.2s linear;
+  transition: top 0.15s linear, left 0.15s linear, transform 0.15s linear;
   will-change: top, left, transform;
 }
+.topnav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 80px;
+  background: #333;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
 
 .in-header{
   position: fixed;
@@ -199,10 +225,11 @@ body {
                                                                                                   
                  ▄▄▄  ▄        ▄▄    ▄▄▄▄  ▄▄▄▄▄▄ ▄▄▄▄▄  ▄    ▄         ▄▄▄▄   ▄▄▄▄   ▄▄▄▄  ▄▄▄▄▄ 
  ▄▀▀▀▄         ▄▀   ▀ █        ██   █▀   ▀ █        █     █  █         ▀   ▀█ ▄▀  ▀▄ ▀   ▀█ █     
-█ █▀▀ █        █   ▄▄ █       █  █  ▀█▄▄▄  █▄▄▄▄▄   █      ██              ▄▀ █  ▄ █     ▄▀ ▀▀▀▀▄▄
+█ █▀▀ █        █   ▄▄ █       █  █  ▀█▄▄▄  █▄▄▄▄▄   █      ██              ▄▀ █    █     ▄▀ ▀▀▀▀▄▄
 ▀▄▀▀▀▄▀        █    █ █       █▄▄█      ▀█ █        █     ▄▀▀▄           ▄▀   █    █   ▄▀        █
   ▀▀▀           ▀▄▄▄▀ █▄▄▄▄▄ █    █ ▀▄▄▄█▀ █      ▄▄█▄▄  ▄▀  ▀▄        ▄█▄▄▄▄  █▄▄█  ▄█▄▄▄▄ ▀▄▄▄█▀
                                                                                                   
-                                                                                                  
+     
+  
 */
 

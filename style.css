@@ -9,6 +9,13 @@ p {
   color: lime;
 }
 
+.Rick{
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  color: greenyellow;
+}
+
 .bottom {
   position: absolute;
   top: 10000px;
@@ -44,6 +51,7 @@ div {
   left: 0px;
   position: relative;
   text-align: left;
+  width: 80%;
 }
 
 
@@ -103,3 +111,31 @@ body {
 }
 
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+  color: white;
+  text-align: center;
+}
+
+
+.links{
+  position: absolute;
+  background-color: white;
+  top: 70%;
+  width: 100%;
+  left: 0;
+  padding: 0%;
+  
+
+}
+
+.link{
+  position: relative;
+}
+.link2{
+  position: relative;
+}

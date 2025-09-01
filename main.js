@@ -6,19 +6,15 @@ function mainloop(){
         document.getElementById("androidico").style.left = scrollY*4;
         document.getElementById("androidico").style.top =  100 -scrollY;
         
-    }else{
+    }
+    else{
         document.getElementById("androidico").style.scale = 0.1;
         document.getElementById("androidico").style.top =  auto;
-        document.getElementById("androidico").style.right =  auto;
-        
+        document.getElementById("androidico").style.right = 0;
+        document.getElementById("androidico").setAttribute()
+                
+            }
+        };
 
-    }
-        
-
-    
-
-
-
-}
 
 setInterval(mainloop,1);

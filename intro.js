@@ -16,4 +16,4 @@ function mainloop1(){
     document.getElementById("androidgif").src = x;
     y = y + 1;
 };
-setInterval(mainloop1,1000);
+setInterval(mainloop1,10);

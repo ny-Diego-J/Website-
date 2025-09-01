@@ -1,20 +1,26 @@
-function mainloop(){
+const img = document.getElementById("androidico");
+const startY = 200;   
+const endY = 20;      
+const startX = 20;    
+const endX = window.innerWidth / 2; 
+const startScale = 1; 
+const endScale = 0.4; 
+const scrollStart = 0;   
+const scrollEnd = 300;   
 
-    
-    if(scrollY < 227){
-        document.getElementById("androidico").style.scale();
-        document.getElementById("androidico").style.left = scrollY*4;
-        document.getElementById("androidico").style.top =  100 -scrollY;
-        
-    }
-    else{
-        document.getElementById("androidico").style.scale = 0.1;
-        document.getElementById("androidico").style.top =  10;
-        document.getElementById("androidico").style.right = 0;
-        
-                
-    }
-    
-};
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
 
-setInterval(mainloop,1);
+
+  let t = (scrollY - scrollStart) / (scrollEnd - scrollStart);
+  t = Math.min(Math.max(t, 0), 1);
+
+ 
+  const top = startY + (endY - startY) * t;
+  const left = startX + (endX - startX) * t;
+  const scale = startScale + (endScale - startScale) * t;
+
+  img.style.top = top + "px";
+  img.style.left = left + "px";
+  img.style.transform = `translateX(-50%) scale(${scale})`;
+});

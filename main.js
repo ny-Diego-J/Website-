@@ -1,56 +1,40 @@
-const img = document.getElementById("androidico");
-const header = document.querySelector(".topnav");
+const plushie = document.getElementById('androidico');
+const header = document.querySelector('.heading');
+const title = document.querySelector('.header');
+const plushieStartSize = 200;
+const plushieEndSize = 60;
+const scrollThreshold = 10; // ab wann das Plushie in die Mitte wandert
 
-function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
-function lerp(a, b, t) { return a + (b - a) * t; }
-
-function computeTargets() {
-  const headerH = header ? header.offsetHeight : 80;
-
-  // Startposition (links unter dem Header)
-  const start = { top: headerH + 80, left: 20, scale: 1 };
-
-  // Bildgröße auslesen
-  const rect = img.getBoundingClientRect();
-  const imgW = rect.width || 240;
-  const imgH = rect.height || 240;
-
-  // Zielposition (zentriert im Header)
-  const endScale = 0.4;
-  const end = {
-    top: headerH / 2 - (imgH * endScale) / 2 + 4,
-    left: (window.innerWidth / 2) - (imgW * endScale) / 2,
-    scale: endScale
-  };
-
-  return { start, end };
+function updatePlushiePosition() {
+  const headerRect = header.getBoundingClientRect();
+  const titleRect = title.getBoundingClientRect();
+  const scrollY = window.scrollY;
+  let size;
+  if(scrollY < scrollThreshold) {
+    size = plushieStartSize;
+  } else if(scrollY > headerRect.height) {
+    size = plushieEndSize;
+  } else {
+    size = plushieStartSize - (scrollY / headerRect.height) * (plushieStartSize - plushieEndSize);
+    size = Math.max(plushieEndSize, size);
+  }
+  plushie.style.height = size + 'px';
+  plushie.style.transition = 'height 0.3s, left 0.3s, transform 0.3s, top 0.3s';
+  plushie.style.position = 'absolute';
+  if(scrollY < scrollThreshold) {
+    // Start: links neben dem Titel, weiter unten
+    plushie.style.left = '0';
+    plushie.style.transform = 'none';
+    plushie.style.top = (title.offsetTop + title.offsetHeight/2 - size/2 + 30) + 'px'; // 30px extra Abstand nach unten
+  } else {
+    // Nach Scroll: mittig im Header, bündig mit Titel unten
+    plushie.style.left = '50%';
+    plushie.style.transform = 'translateX(-50%)';
+    plushie.style.top = (title.offsetTop + title.offsetHeight - size) + 'px';
+  }
 }
 
-let targets = computeTargets();
-
-function update() {
-  const scrollStart = 0;
-  const scrollEnd = 300; // nach 300px ist das Bild im Header
-  let t = (window.scrollY - scrollStart) / (scrollEnd - scrollStart);
-  t = clamp(t, 0, 1);
-
-  const { start, end } = targets;
-  const top = lerp(start.top, end.top, t);
-  const left = lerp(start.left, end.left, t);
-  const scale = lerp(start.scale, end.scale, t);
-
-  img.style.top = top + "px";
-  img.style.left = left + "px";
-  img.style.transform = `scale(${scale})`;
-}
-
-window.addEventListener("resize", () => {
-  targets = computeTargets();
-  update();
-});
-
-window.addEventListener("scroll", update, { passive: true });
-window.addEventListener("load", () => {
-  targets = computeTargets();
-  update();
-});
+window.addEventListener('scroll', updatePlushiePosition);
+window.addEventListener('resize', updatePlushiePosition);
+window.addEventListener('load', updatePlushiePosition);
+document.addEventListener('DOMContentLoaded', updatePlushiePosition);

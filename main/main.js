@@ -1,8 +1,9 @@
 const plushie = document.getElementById('androidico');
 const header = document.querySelector('.heading');
 const title = document.querySelector('.header');
-const plushieStartSize = 200;
+const plushieStartSize = 300; // Startgröße um 100px erhöht
 const plushieEndSize = 60;
+const plushieStartWidth = 300; // Feste Startbreite
 const scrollThreshold = 10; // ab wann das Plushie in die Mitte wandert
 
 function updatePlushiePosition() {
@@ -19,18 +20,21 @@ function updatePlushiePosition() {
     size = Math.max(plushieEndSize, size);
   }
   plushie.style.height = size + 'px';
-  plushie.style.transition = 'height 0.3s, left 0.3s, transform 0.3s, top 0.3s';
+  plushie.style.transition = 'height 0.3s, left 0.3s, transform 0.3s, top 0.3s, width 0.3s';
   plushie.style.position = 'absolute';
+  plushie.style.objectFit = 'contain';
   if(scrollY < scrollThreshold) {
-    // Start: links neben dem Titel, weiter unten
-    plushie.style.left = '0';
+    // Start: weiter rechts und noch weiter unten, feste Breite
+    plushie.style.left = '80px';
     plushie.style.transform = 'none';
-    plushie.style.top = (title.offsetTop + title.offsetHeight/2 - size/2 + 30) + 'px'; // 30px extra Abstand nach unten
+    plushie.style.top = (title.offsetTop + title.offsetHeight/2 - size/2 + 220) + 'px'; // 220px extra Abstand nach unten
+    plushie.style.width = plushieStartWidth + 'px';
   } else {
-    // Nach Scroll: mittig im Header, bündig mit Titel unten
+    // Nach Scroll: mittig im Header, bündig mit Titel unten, Breite automatisch
     plushie.style.left = '50%';
     plushie.style.transform = 'translateX(-50%)';
-    plushie.style.top = (title.offsetTop + title.offsetHeight - size) + 'px';
+    plushie.style.top = (title.offsetTop + title.offsetHeight - size - 40) + 'px'; // Endpunkt 40px höher
+    plushie.style.width = '';
   }
 }
 

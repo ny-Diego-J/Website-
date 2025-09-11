@@ -28,8 +28,8 @@ p {
 
 .Rick{
   position: absolute;
-  right: 15px;
-  top: 45%;
+  right: 50px;
+  top: 40%;
   color: lime;
   text-decoration: none;
   font-family: Arial, Helvetica, sans-serif;
@@ -50,14 +50,14 @@ p {
 
 .bottom {
   position: absolute;
-  top: 10000px;
+  top: 3000px;
 }
 
 .header {
-  top: 0%;
+  top: 0px;
   text-align: left;
   font-size: 50px;
-  position: fixed;
+  position: fixed;;
 } 
 
 .android {
@@ -115,7 +115,7 @@ body {
 }
 
 .beschreibung {
-  background-color: white;
+  background-color: transparent;
   position: absolute;
   width: 50%;
   height: 50%;
@@ -188,7 +188,7 @@ body {
 
 .links{
   position: absolute;
-  background-color: white;
+  background-color: transparent;
   top: 70%;
   width: 100%;
   left: 0;
@@ -201,6 +201,12 @@ body {
   position: relative;
 }
 
+.bg {
+  z-index: -1;
+  width: 100%;
+  left: 0;
+  position: fixed;
+}
 
 
 

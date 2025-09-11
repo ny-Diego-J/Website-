@@ -1,12 +1,32 @@
-.img{
-    position: fixed;
-  top: 1600px;
-  left: 200px;
-  max-width: 3000px;
-  width: auto;
-  height: auto;
-  z-index: 900;
-  padding: 100px;
-  transition: top 0.15s linear, left 0.15s linear, transform 0.15s linear;
-  will-change: top, left, transform;
-};
+
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  height: 100vh;          
+  margin: 0;              
+  
+  
+}
+
+.bg{
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  left: 0;
+  position: fixed;
+  margin: auto;
+  padding: 0;
+  top: 0;
+  padding-bottom: 0;
+}
+
+
+.android {
+  width: 300px;  
+  height: auto;  
+  padding: 0;   
+  z-index: 900;  
+  position: relative; 
+  
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Game</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='game.css'>
+    <script src='game.js'></script>
+</head>
+<body>
+    <h1>Get 1000 Cookies to pass</h1>
+   <h1 id="counter">Cookies: 0</h1>
+  <button id="cookie-btn" onclick="clickCookie()">🍪</button>
+  <h2>CPS: <span id="cps">0</span> | CPC: <span id="cpc">1</span></h2>
+
+  <div id="shop-container">
+    <button id="shop-toggle" onclick="toggleShop()">🛒 Shop anzeigen</button>
+    <div id="shop" class="hidden">
+      <h2>Shop</h2>
+      <button onclick="buyCursor()">afk clicks</br>(+1 CPS) – costs <span id="cursorCost">10</span> cookies</button>
+      <button onclick="buyClickUpgrade()">upgrade clickpower</br>(+1 CPC) – costs <span id="clickCost">15</span> cookies</button>
+    </div>
+  </div>
+
+</body>
+</html>

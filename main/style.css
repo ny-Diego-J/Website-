@@ -4,7 +4,7 @@ body {
   margin: 0;
   height: 200vh;
   padding-top: 80px;
-} 
+}
 
 h1,
 p {
@@ -14,7 +14,8 @@ p {
 
 .heading {
   position: flex;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 80px;
   background: #000;
@@ -26,7 +27,7 @@ p {
   z-index: 1000;
 }
 
-.Rick{
+.Rick {
   position: absolute;
   right: 50px;
   top: 40%;
@@ -36,9 +37,9 @@ p {
   font-weight: bold;
   font-size: 36px;
   text-align: center;
-} 
+}
 
-.scroll-container{
+.scroll-container {
   position: relative;
   background-color: transparent;
   margin-top: 180px;
@@ -57,8 +58,8 @@ p {
   top: 0px;
   text-align: left;
   font-size: 50px;
-  position: fixed;;
-} 
+  position: fixed;
+}
 
 .android {
   position: fixed;
@@ -71,11 +72,12 @@ p {
   padding: 10px;
   transition: top 0.15s linear, left 0.15s linear, transform 0.15s linear;
   will-change: top, left, transform;
-   justify-content: center;
+  justify-content: center;
 }
 .topnav {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 80px;
   background: #333;
@@ -84,15 +86,13 @@ p {
   align-items: center;
 }
 
-
-.in-header{
+.in-header {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%) scale(0.4);
   width: auto;
 }
-
 
 div {
   width: 100px;
@@ -109,7 +109,6 @@ div {
   text-align: left;
   width: 80%;
 }
-
 
 body {
   padding: 20px;
@@ -174,11 +173,34 @@ body {
   margin: auto;
 }
 
+.gaming {
+  position: absolute;
+  background-color: transparent;
+  top: 520px;
+  right: 245px;
+  transform: translateX(-50%);
+  padding: 0%;
+  text-decoration: none;
+}
+
+.game {
+  position: absolute;
+  font-family: roboto;
+  font-size: 30px;
+  background-color: transparent;
+  width: 100px;
+  left: 0px;
+  height: auto;
+  transform: translateX(-50%);
+  padding: 0%;
+  text-decoration: none;
+  color: turquoise;
+}
 
 .footer {
   position: fixed;
   left: 0px;
-  bottom:  0%;
+  bottom: 0%;
   width: 100%;
   height: min-content;
   background-color: gray;
@@ -186,19 +208,17 @@ body {
   text-align: center;
 }
 
-
-.links{
+.links {
   position: absolute;
   background-color: transparent;
   top: 70%;
   width: 100%;
   left: 0;
   padding: 0%;
-  
-
 }
 
-.link, .link2{
+.link,
+.link2 {
   position: relative;
 }
 
@@ -208,10 +228,6 @@ body {
   left: 0;
   position: fixed;
 }
-
-
-
-
 
 /* ⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠙⢷⣤⣤⣴⣶⣶⣦⣤⣤⡾⠋⠀⠀⠀⠀⠀
@@ -239,4 +255,3 @@ body {
      
   
 */
-

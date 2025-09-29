@@ -1,5 +1,3 @@
-
-   function onSubmit(token) {
-     document.getElementById("demo-form").submit();
-   }
- 
+function onSubmit(token) {
+  document.getElementById("demo-form").submit();
+}

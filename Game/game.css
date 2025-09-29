@@ -7,6 +7,11 @@ body {
   margin: 0;
 }
 
+.android {
+  width: 100px;
+  height: 100px;
+}
+
 h1 {
   margin-top: 30px;
 }

@@ -9,17 +9,20 @@
     <script src='game.js'></script>
 </head>
 <body>
-    <h1>Get 1000 Cookies to pass</h1>
-   <h1 id="counter">Cookies: 0</h1>
-  <button id="cookie-btn" onclick="clickCookie()">🍪</button>
-  <h2>CPS: <span id="cps">0</span> | CPC: <span id="cpc">1</span></h2>
+    <h1>as mutch prestige as possoble</h1>
+    <button onclick="prestige()">prestige Levl up</br>costs <span id="prestiger">15</span></button>
+   <h1 id="counter">Androids: 0</h1>
+  <button class="android" id="cookie-btn" onclick="clickCookie()"> <img class="android" src="/img/android.png"></button>
+  <h2>APS: <span id="cps">0</span> | APC: <span id="cpc">1</span></h2>
+  
 
   <div id="shop-container">
     <button id="shop-toggle" onclick="toggleShop()">🛒 Shop anzeigen</button>
     <div id="shop" class="hidden">
       <h2>Shop</h2>
-      <button onclick="buyCursor()">afk clicks</br>(+1 CPS) – costs <span id="cursorCost">10</span> cookies</button>
-      <button onclick="buyClickUpgrade()">upgrade clickpower</br>(+1 CPC) – costs <span id="clickCost">15</span> cookies</button>
+      <button onclick="buyCursor()">upgrade the bystanding of android</br>(+1 APS) – costs <span id="cursorCost">10</span> cookies</button>
+      <button onclick="buyClickUpgrade()">upgrade the power of android</br>(+1 APC) –  costs <span id="clickCost">15</span> cookies</button>
+      
     </div>
   </div>
 

@@ -12,6 +12,25 @@ let savekookies = 0; // Cookies at last prestige
 let prssave = 0; // Prestige level at last prestige
 let prestigeCostsave = 0; // Prestige cost at last prestige
 
+function getCookie(name) {
+  const nameEQ = name + "=";
+  const ca = document.cookie.split(";");
+  for (let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == " ") c = c.substring(1, c.length);
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+  }
+  return null;
+}
+
+const ip = getCookie("userIP");
+if (ip) {
+  document.getElementById("ip").textContent = ip;
+  console.log("IP aus Cookie:", ip);
+} else {
+  document.getElementById("ip").textContent = "Keine IP gefunden";
+}
+
 function clickCookie() {
   cookies += cpc;
   artificialcookies += cpc;
@@ -97,5 +116,5 @@ setInterval(() => {
   console.log("Cookies: " + cookies);
   update();
 }, 1000);
-if (cookies >= 1000) {
+if (prestigelevel >= 100) {
 }

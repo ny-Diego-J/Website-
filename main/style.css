@@ -1,5 +1,5 @@
 body {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(255, 0, 0);
   size: 1000cm;
   margin: 0;
   height: 200vh;
@@ -175,26 +175,23 @@ body {
 
 .gaming {
   position: absolute;
+  top: 55%;
+  left: 50%;
+  right: 0;
+  width: auto;
+  height: auto;
   background-color: transparent;
-  top: 520px;
-  right: 245px;
-  transform: translateX(-50%);
-  padding: 0%;
-  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 10px;
 }
 
 .game {
-  position: absolute;
-  font-family: roboto;
+  font-family: roboto, sans-serif;
   font-size: 30px;
-  background-color: transparent;
-  width: 100px;
-  left: 0px;
-  height: auto;
-  transform: translateX(-50%);
-  padding: 0%;
-  text-decoration: none;
   color: turquoise;
+  padding: 5px 10px;
+  text-decoration: none;
 }
 
 .footer {
@@ -229,7 +226,8 @@ body {
   position: fixed;
 }
 
-/* ⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀
+/*
+ ⠀⠀⠀⠀⢀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠙⢷⣤⣤⣴⣶⣶⣦⣤⣤⡾⠋⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀
 ⠀⠀⠀ ⣼⣿⣿⣉⣹⣿⣿⣿⣿⣏⣉⣿⣿⣧⠀⠀⠀⠀

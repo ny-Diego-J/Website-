@@ -14,8 +14,8 @@ function ondklick() {
   //document.getElementById("demo-form").submit();
   if (evil == 1) {
     console.log(evil);
-    window.location.href = "../main/main.html?x=1";
+    window.location.href = "../main/main.html?u=1&x=1";
   } else {
-    window.location.href = "../main/main.html";
+    window.location.href = "../main/main.html?u=1";
   }
 }

@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Game</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='game.css'>
-    <script src='game.js'></script>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Game</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='game.css'>
+  <script src='game.js'></script>
 </head>
+
 <body>
-    <h1>as mutch prestige as possoble</h1>
-    <button onclick="prestige()">prestige Levl up</br>costs <span id="prestiger">15</span></button>
-   <h1 id="counter">Androids: 0</h1>
+  <h1>as mutch prestige as possoble</h1>
+  <button onclick="prestige()">prestige Levl up</br>costs <span id="prestiger">1250</span></button>
+  <h1 id="counter">Androids: 0</h1>
   <button class="android" id="cookie-btn" onclick="clickCookie()"> <img class="android" src="/img/android.png"></button>
-  <h2>APS: <span id="cps">0</span> | APC: <span id="cpc">1</span></h2>
-  
+  <h2>APS: <span id="aps">0</span> | APC: <span id="apc">1</span></h2>
+
 
   <div id="shop-container">
     <button id="shop-toggle" onclick="toggleShop()">🛒 Shop anzeigen</button>
     <div id="shop" class="hidden">
       <h2>Shop</h2>
-      <button onclick="buyCursor()">upgrade the bystanding of android</br>(+1 APS) – costs <span id="cursorCost">10</span> cookies</button>
-      <button onclick="buyClickUpgrade()">upgrade the power of android</br>(+1 APC) –  costs <span id="clickCost">15</span> cookies</button>
-      
+      <button onclick="buyCursor()">upgrade the bystanding of android</br>(+1 APS) – costs <span
+          id="cursorCost">10</span> cookies</button>
+      <button onclick="buyClickUpgrade()">upgrade the power of android</br>(+1 APC) – costs <span
+          id="clickCost">15</span> cookies</button>
+
     </div>
   </div>
   <p>Deine IP: <span id="ip">lade…</span></p>
 
 </body>
+
 </html>

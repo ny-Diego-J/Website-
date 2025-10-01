@@ -1,15 +1,18 @@
 const queryString = window.location.search;
 const element = document.querySelector("bg");
 
-// Create a URLSearchParams object
+
 const params = new URLSearchParams(queryString);
 
-// Get specific parameters by name
-const evil = params.get("x"); // 1 ore null
-
+const evil = params.get("x");
+const u = params.get("u");
+const z = params.get("ip");
 const plushie = document.getElementById("androidico");
 const header = document.querySelector(".heading");
 const title = document.querySelector(".header");
+function game() {
+  window.location.href = "../Game/game.html?x=" + evil + "&ip=" + z + "&u=2";
+}
 
 function setCookie(name, value, days) {
   let expires = "";
@@ -42,19 +45,29 @@ async function getIP() {
       const res = await fetch("https://api.ipify.org?format=json");
       const data = await res.json();
       ip = data.ip;
-      setCookie("userIP", ip, 7); // 7 Tage speichern
+      console.log(u);
+
+
+      setCookie("userIP", ip, 7);
       console.log("IP neu gespeichert:", ip);
       document.getElementById("ip").textContent = ip;
+
     } catch (err) {
       document.getElementById("ip").textContent = "Fehler";
       console.error(err);
     }
   }
+  if (u == 1) {
+    console.log("URL-Variable u=1, IP erhalten:", ip);
+    console.log("Keine URL-Variable u=1, weiterleiten...");
+    window.location.href = "main.html?x=" + evil + "&ip=" + ip + "&u=2";
+  }
 }
-if (evil === "1") {
+if (evil == "1") {
   console.log("Evil mode activated");
   document.getElementById("bg").src = "android.png";
 }
+console.log(u);
 getIP();
 
 const plushieStartSize = 300;
@@ -69,7 +82,7 @@ function introinmain() {
   getElementById("header").style.left = 0;
   k;
 }
-
+const headerHeight = header.offsetHeight;
 function updatePlushiePosition() {
   const headerHeight = header.offsetHeight;
   const scrollY = window.scrollY;
@@ -108,8 +121,6 @@ window.addEventListener("load", () => {
   plushieStartTop = plushie.offsetTop;
   updatePlushiePosition();
 });
-
-setInterval(introinmain, 100);
 window.addEventListener("scroll", updatePlushiePosition);
 window.addEventListener("resize", updatePlushiePosition);
 document.addEventListener("DOMContentLoaded", updatePlushiePosition);

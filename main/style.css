@@ -154,7 +154,17 @@ body {
   height: auto;
   margin: auto;
 }
+.aboutfarm {
+  width: 100%;
+  background-color: transparent;
+  position: relative;
 
+  height: 50%;
+  margin-top: 10%;
+
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  font-weight: 900;
+}
 .michelin {
   width: 100px;
   height: auto;

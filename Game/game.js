@@ -15,11 +15,9 @@ const queryString = window.location.search;
 const element = document.querySelector("bg");
 const params = new URLSearchParams(queryString);
 
-
 const evil = params.get("x");
 const u = params.get("u");
 const z = params.get("ip");
-
 
 function getCookie(name) {
   const nameEQ = name + "=";
@@ -31,9 +29,6 @@ function getCookie(name) {
   }
   return null;
 }
-
-
-
 
 function clickCookie() {
   cookies += apc;
@@ -65,10 +60,10 @@ function prestige() {
   if (cookies <= prestigeCost - 1) {
     alert(
       "You need " +
-      prestigeCost +
-      " cookies to prestige! You currently have " +
-      cookies +
-      " cookies."
+        prestigeCost +
+        " cookies to prestige! You currently have " +
+        cookies +
+        " cookies."
     );
     return;
   } else {
@@ -78,7 +73,7 @@ function prestige() {
     cursorCost = 10;
     clickCost = 15;
     artificialcookies = 0;
-    for (let i = 1; i <= possibleprestigebuys;) prs = prs + 1;
+    for (let i = 1; i <= possibleprestigebuys; ) prs = prs + 1;
   }
 }
 
@@ -108,7 +103,7 @@ setInterval(() => {
   savekookies = artificialcookies;
   prssave = prs;
   prestigeCostsave = prestigeCost;
-  for (; prestigeCost <= artificialcookies;) {
+  for (; prestigeCost <= artificialcookies; ) {
     artificialcookies -= prestigeCost;
     possibleprestigebuys++;
     prssave++;
@@ -124,5 +119,4 @@ setInterval(() => {
   if (prestigelevel >= 10) {
     window.location.href = "../intro/intro.html?x=1";
   }
-
 }, 1000);

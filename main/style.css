@@ -1,9 +1,9 @@
 body {
-  background-color: rgb(255, 0, 0);
-  size: 1000cm;
+  size: 100%;
   margin: 0;
-  height: 200vh;
+  height: auto; /* Changed from 200vh */
   padding-top: 80px;
+  min-height: 100vh; /* Optional: ensures body is at least viewport height */
 }
 
 h1,
@@ -51,7 +51,7 @@ p {
 
 .bottom {
   position: absolute;
-  top: 3000px;
+  top: 3px;
 }
 
 .header {
@@ -68,7 +68,7 @@ p {
   max-width: 300px;
   width: auto;
   height: auto;
-  z-index: 900;
+  z-index: 100000;
   padding: 10px;
   transition: top 0.15s linear, left 0.15s linear, transform 0.15s linear;
   will-change: top, left, transform;
@@ -86,18 +86,9 @@ p {
   align-items: center;
 }
 
-.in-header {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%) scale(0.4);
-  width: auto;
-}
-
 div {
   width: 100px;
   height: 100px;
-  background: red;
   position: relative;
   animation: mymove 5s infinite;
 }
@@ -110,19 +101,28 @@ div {
   width: 80%;
 }
 
+.text_02 {
+  padding-left: 15px;
+  left: 0px;
+  font-size: 2px;
+  position: relative;
+  text-align: left;
+  width: 80%;
+}
+
 body {
   padding: 20px;
 }
 
 .beschreibung {
   background-color: transparent;
-  position: absolute;
+  position: sticky;
   width: 50%;
   height: 50%;
-  right: 0px;
-  top: 100px;
-  text-shadow: black;
-  text-shadow: 2px;
+  margin-top: 10%;
+  margin-left: 50%;
+  text-shadow: 2px 2px 5px rgb(0, 0, 0);
+  font-weight: 900;
 }
 
 .box {
@@ -173,27 +173,6 @@ body {
   margin: auto;
 }
 
-.gaming {
-  position: absolute;
-  top: 55%;
-  left: 50%;
-  right: 0;
-  width: auto;
-  height: auto;
-  background-color: transparent;
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 10px;
-}
-
-.game {
-  font-family: roboto, sans-serif;
-  font-size: 30px;
-  color: turquoise;
-  padding: 5px 10px;
-  text-decoration: none;
-}
-
 .footer {
   position: fixed;
   left: 0px;
@@ -205,24 +184,11 @@ body {
   text-align: center;
 }
 
-.links {
-  position: absolute;
-  background-color: transparent;
-  top: 70%;
-  width: 100%;
-  left: 0;
-  padding: 0%;
-}
-
-.link,
-.link2 {
-  position: relative;
-}
-
 .bg {
   z-index: -1;
   width: 100%;
-  left: 0;
+  left: 0%;
+  top: 0%;
   position: fixed;
 }
 
@@ -243,13 +209,16 @@ body {
 ⠀⠀⠀⠀⠀⠀⣿⣿⣿⡇⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⠀⠀⠀⠉⠉⠁⠀⠀⠀⠀⠀⠀
 
-                                                                                                  
-                 ▄▄▄  ▄        ▄▄    ▄▄▄▄  ▄▄▄▄▄▄ ▄▄▄▄▄  ▄    ▄         ▄▄▄▄   ▄▄▄▄   ▄▄▄▄  ▄▄▄▄▄ 
- ▄▀▀▀▄         ▄▀   ▀ █        ██   █▀   ▀ █        █     █  █         ▀   ▀█ ▄▀  ▀▄ ▀   ▀█ █     
-█ █▀▀ █        █   ▄▄ █       █  █  ▀█▄▄▄  █▄▄▄▄▄   █      ██              ▄▀ █    █     ▄▀ ▀▀▀▀▄▄
-▀▄▀▀▀▄▀        █    █ █       █▄▄█      ▀█ █        █     ▄▀▀▄           ▄▀   █    █   ▄▀        █
-  ▀▀▀           ▀▄▄▄▀ █▄▄▄▄▄ █    █ ▀▄▄▄█▀ █      ▄▄█▄▄  ▄▀  ▀▄        ▄█▄▄▄▄  █▄▄█  ▄█▄▄▄▄ ▀▄▄▄█▀
-                                                                                                  
-     
+                                                                                                                                                      
+                        ▄▄▄▄   ▄▄           ▄▄       ▄▄▄▄    ▄▄▄▄▄▄▄▄  ▄▄        ▄▄▄▄▄▄▄▄  ▄▄▄  ▄▄▄             ▄▄▄▄▄      ▄▄▄▄     ▄▄▄▄▄    ▄▄▄▄▄▄▄  
+ ▄▄▀▀▀▀▄▄             ██▀▀▀▀█  ██          ████    ▄█▀▀▀▀█   ██▀▀▀▀▀▀  ██        ██▀▀▀▀▀▀   ██▄▄██             █▀▀▀▀██▄   ██▀▀██   █▀▀▀▀██▄  ██▀▀▀▀▀  
+▄▀▄█▀▀▀ ▀▄           ██        ██          ████    ██▄       ██        ██        ██          ████                    ██  ██    ██        ██  ██▄▄▄▄   
+█ █      █           ██  ▄▄▄▄  ██         ██  ██    ▀████▄   ███████   ██        ███████      ██                   ▄█▀   ██    ██      ▄█▀   █▀▀▀▀██▄ 
+▀▄▀█▄▄▄ ▄▀           ██  ▀▀██  ██         ██████        ▀██  ██        ██        ██          ████                ▄█▀     ██    ██    ▄█▀           ██ 
+ ▀▀▄▄▄▄▀▀             ██▄▄▄██  ██▄▄▄▄▄▄  ▄██  ██▄  █▄▄▄▄▄█▀  ██        ██▄▄▄▄▄▄  ██▄▄▄▄▄▄   ██  ██             ▄██▄▄▄▄▄   ██▄▄██   ▄██▄▄▄▄▄  █▄▄▄▄██▀ 
+                        ▀▀▀▀   ▀▀▀▀▀▀▀▀  ▀▀    ▀▀   ▀▀▀▀▀    ▀▀        ▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀  ▀▀▀  ▀▀▀            ▀▀▀▀▀▀▀▀    ▀▀▀▀    ▀▀▀▀▀▀▀▀   ▀▀▀▀▀   
+                                                                                                                                                      
+                                                                                                                                                      
+     GEMAAKT DOOR ALMACHTIGE GlasFlex IN 2025
   
 */

@@ -1,17 +1,22 @@
 const queryString = window.location.search;
 const element = document.querySelector("bg");
 
-
 const params = new URLSearchParams(queryString);
 
 const evil = params.get("x");
 const u = params.get("u");
-const z = params.get("ip");
+let z = params.get("ip"); // Changed to let
 const plushie = document.getElementById("androidico");
 const header = document.querySelector(".heading");
 const title = document.querySelector(".header");
-function game() {
-  window.location.href = "../Game/game.html?x=" + evil + "&ip=" + z + "&u=2";
+
+async function game() {
+  let ip = z || getCookie("userIP");
+  if (!ip) {
+    ip = await getIPValue();
+  }
+  window.location.href =
+    "../Game/game.html?x=" + (evil || "") + "&ip=" + ip + "&u=2";
 }
 
 function setCookie(name, value, days) {
@@ -40,6 +45,7 @@ async function getIP() {
   if (ip) {
     console.log("IP aus Cookie:", ip);
     document.getElementById("ip").textContent = ip;
+    z = ip; // Update global z
   } else {
     try {
       const res = await fetch("https://api.ipify.org?format=json");
@@ -47,11 +53,10 @@ async function getIP() {
       ip = data.ip;
       console.log(u);
 
-
       setCookie("userIP", ip, 7);
       console.log("IP neu gespeichert:", ip);
       document.getElementById("ip").textContent = ip;
-
+      z = ip; // Update global z
     } catch (err) {
       document.getElementById("ip").textContent = "Fehler";
       console.error(err);
@@ -63,64 +68,42 @@ async function getIP() {
     window.location.href = "main.html?x=" + evil + "&ip=" + ip + "&u=2";
   }
 }
+
+async function getIPValue() {
+  let ip = getCookie("userIP");
+  if (ip) return ip;
+
+  try {
+    const res = await fetch("https://api.ipify.org?format=json");
+    const data = await res.json();
+    ip = data.ip;
+    setCookie("userIP", ip, 7);
+    return ip;
+  } catch (err) {
+    console.error(err);
+    return null;
+  }
+}
+
 if (evil == "1") {
   console.log("Evil mode activated");
-  document.getElementById("bg").src = "android.png";
+  document.getElementById("bg").src = "Bild.png";
 }
 console.log(u);
 getIP();
 
-const plushieStartSize = 300;
-const plushieEndSize = 60;
-const plushieStartWidth = 300;
-const scrollThreshold = 10;
-
-let plushieStartTop;
-var k = 0;
-function introinmain() {
-  k = k + 10;
-  getElementById("header").style.left = 0;
-  k;
-}
-const headerHeight = header.offsetHeight;
-function updatePlushiePosition() {
-  const headerHeight = header.offsetHeight;
-  const scrollY = window.scrollY;
-}
-
-let size;
-if (scrollY < scrollThreshold) {
-  size = plushieStartSize;
-} else if (scrollY > headerHeight) {
-  size = plushieEndSize;
-} else {
-  const progress = scrollY / headerHeight;
-  size = plushieStartSize - progress * (plushieStartSize - plushieEndSize);
-  size = Math.max(plushieEndSize, size);
-}
-
-plushie.style.height = size + "px";
-plushie.style.position = "absolute";
-plushie.style.objectFit = "contain";
-plushie.style.transition =
-  "height 0.3s, left 0.3s, transform 0.3s, top 0.3s, width 0.3s";
-
-if (scrollY < scrollThreshold) {
-  plushie.style.left = "80px";
-  plushie.style.transform = "none";
-  plushie.style.top = plushieStartTop + "px";
-  plushie.style.width = plushieStartWidth + "px";
-} else {
-  plushie.style.left = "50%";
-  plushie.style.transform = "translateX(-50%)";
-  plushie.style.top = title.offsetTop + title.offsetHeight - size - 30 + "px";
-  plushie.style.width = "";
-}
-
-window.addEventListener("load", () => {
-  plushieStartTop = plushie.offsetTop;
-  updatePlushiePosition();
-});
-window.addEventListener("scroll", updatePlushiePosition);
-window.addEventListener("resize", updatePlushiePosition);
-document.addEventListener("DOMContentLoaded", updatePlushiePosition);
+onscroll = function () {
+  if (window.scrollY > 200) {
+    plushie.style.top = 15 + "px";
+    plushie.style.left = 50 + "%";
+    plushie.style.width = 100 + "px";
+    plushie.style.transform = "translate(-50%, 0%)";
+    plushie.style.transition = "top 0.3s, left 0.3s, width 0.3s";
+  } else {
+    plushie.style.top = 160 + "px";
+    plushie.style.left = 20 + "px";
+    plushie.style.width = 300 + "px";
+    plushie.style.transition = "top 0.3s, left 0.3s, width 0.3s";
+    plushie.style.transform = "translate(0%, 0%)";
+  }
+};

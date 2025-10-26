@@ -115,3 +115,10 @@
     Aufgaben: Bugs finden und vorhandene verbessern. Versuchen Bootstrap zu benutzen.
 
     Neusten Erreignisse für unser Projekt:
+
+
+Eddits for next Week:
+    - index.html wo einen direkt umleitet zu intro👍
+    - All website -> in to one folder
+    - Fix ip grabber
+    - 

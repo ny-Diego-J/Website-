@@ -5,6 +5,5 @@
         return;
       }
 
-      // Wenn Captcha erfolgreich:
-      window.location.href = "intro/intro.html";
+      window.location.href = "main/main.html";
     }

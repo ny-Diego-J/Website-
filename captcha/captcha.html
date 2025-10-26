@@ -6,17 +6,15 @@
   <title>captcha</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" type="text/css" media="screen" href="captcha.css" />
-  <!-- lade dein JS zuletzt am Ende oder defer, sonst ist grecaptcha evtl. noch nicht da -->
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
    <div class="container">
     <h1>Verify that you are a Human</h1>
 
-    <!-- Das sichtbare reCAPTCHA-Feld -->
     <div class="g-recaptcha" data-sitekey="6LdMHPgrAAAAAMyZH770MT4Rb02GrYaxD1RbG3Ug"></div>
 
-    <button onclick="checkCaptcha()">Weiter</button>
+    <button onclick="checkCaptcha()">Continue</button>
   </div>
 
   <script src="captcha.js"></script>

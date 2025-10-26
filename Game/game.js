@@ -69,19 +69,19 @@ function prestige() {
     return;
   }
 
-  // Erhöhe Prestige um die berechneten möglichen Käufe (mind. 1)
+
   const buys = Math.max(1, possibleprestigebuys);
   prs += buys;
 
-  // Reset der Progress-Variablen
+
   cookies = 0;
   aps = 0;
-  apc = 1;            // wieder auf 1 setzen, nicht 0
+  apc = 1;            
   cursorCost = 10;
   clickCost = 15;
   artificialcookies = 0;
 
-  // Neue Kosten berechnen und UI updaten
+  
   prestigelevel++;
   update();
   document.getElementById("prestiger").innerText = prestigeCostFor(prs);

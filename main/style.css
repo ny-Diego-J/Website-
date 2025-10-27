@@ -1,10 +1,27 @@
 body {
-  size: 100%;
   margin: 0;
-  height: auto;
-  padding-top: 80px;
   min-height: 100vh;
+  padding-top: 80px;
+  scroll-behavior: smooth;
+  scroll-padding-top: 130px;
 }
+
+#ourfarmers::before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin-top: -120px;
+}
+
+.marginextra {
+  margin: 1% 1% 0%;
+}
+
+.marginextra2 {
+  margin: 1% 1% 1% 1%;
+}
+
+
 
 h1,
 p {
@@ -75,17 +92,7 @@ p {
   justify-content: center;
 }
 
-.topnav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: #333;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-}
+
 
 div {
   width: 100px;
@@ -109,10 +116,6 @@ div {
   position: relative;
   text-align: left;
   width: 80%;
-}
-
-body {
-  padding: 20px;
 }
 
 .beschreibung {
@@ -164,7 +167,7 @@ body {
   margin-top: 10%;
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
   font-weight: 900;
-  margin-bottom: 20%;
+  margin-bottom: 7%;
 }
 
 .michelin {
@@ -186,14 +189,13 @@ body {
 }
 
 .footer {
-  position: fixed;
-  left: 0px;
-  bottom: 0%;
-  width: 100%;
+  position: flex;
+  width: calc(100% - 2%);
   height: min-content;
-  background-color: gray;
+  background-color: #212529;
   color: white;
   text-align: center;
+
 }
 
 .bg {

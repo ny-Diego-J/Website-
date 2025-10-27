@@ -96,6 +96,7 @@ function update() {
   document.getElementById("counter").innerText = "Androids: " + cookies;
   document.getElementById("aps").innerText = aps;
   document.getElementById("apc").innerText = apc;
+  document.getElementById("prestiger").innerText = prestigeCostFor(prs);
 }
 
 function toggleShop() {

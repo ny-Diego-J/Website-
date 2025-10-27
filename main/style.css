@@ -5,6 +5,7 @@ body {
   padding-top: 80px;
   scroll-behavior: smooth;
   scroll-padding-top: 130px;
+  overflow-x: hidden;
 }
 
 #ourfarmers::before {
@@ -62,7 +63,7 @@ p {
   position: fixed;
   top: 160px;
   left: 20px;
-  width: 600px;
+  width: 40%;
   height: auto;
   z-index: 100000;
   padding: 10px;
@@ -130,7 +131,7 @@ div {
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
   font-weight: 900;
   margin-bottom: 7%;
-  margin-left: 2%;
+  margin-left: 0%;
 }
 
 .michelin {
@@ -153,7 +154,9 @@ div {
 
 .footer {
   position: flex;
-  width: calc(100% - 2%);
+  width: 100%;
+  margin: 0%;
+  margin-right: 0px;
   height: min-content;
   background-color: #212529;
   color: white;
@@ -166,6 +169,7 @@ div {
   left: 0%;
   top: 0%;
   position: fixed;
+  background-repeat: repeat-y;
 }
 
 /*

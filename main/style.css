@@ -1,9 +1,9 @@
 body {
   size: 100%;
   margin: 0;
-  height: auto; /* Changed from 200vh */
+  height: auto;
   padding-top: 80px;
-  min-height: 100vh; /* Optional: ensures body is at least viewport height */
+  min-height: 100vh;
 }
 
 h1,
@@ -74,6 +74,7 @@ p {
   will-change: top, left, transform;
   justify-content: center;
 }
+
 .topnav {
   position: fixed;
   top: 0;
@@ -154,17 +155,18 @@ body {
   height: auto;
   margin: auto;
 }
+
 .aboutfarm {
   width: 100%;
   background-color: transparent;
   position: relative;
-
   height: 50%;
   margin-top: 10%;
-
   text-shadow: 2px 2px 5px rgb(0, 0, 0);
   font-weight: 900;
+  margin-bottom: 20%;
 }
+
 .michelin {
   width: 100px;
   height: auto;
@@ -227,8 +229,6 @@ body {
 ▀▄▀█▄▄▄ ▄▀           ██  ▀▀██  ██         ██████        ▀██  ██        ██        ██          ████                ▄█▀     ██    ██    ▄█▀           ██ 
  ▀▀▄▄▄▄▀▀             ██▄▄▄██  ██▄▄▄▄▄▄  ▄██  ██▄  █▄▄▄▄▄█▀  ██        ██▄▄▄▄▄▄  ██▄▄▄▄▄▄   ██  ██             ▄██▄▄▄▄▄   ██▄▄██   ▄██▄▄▄▄▄  █▄▄▄▄██▀ 
                         ▀▀▀▀   ▀▀▀▀▀▀▀▀  ▀▀    ▀▀   ▀▀▀▀▀    ▀▀        ▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀  ▀▀▀  ▀▀▀            ▀▀▀▀▀▀▀▀    ▀▀▀▀    ▀▀▀▀▀▀▀▀   ▀▀▀▀▀   
-                                                                                                                                                      
-                                                                                                                                                      
+                                                                                                                                                                                                                                                                                                  
      GEMAAKT DOOR ALMACHTIGE GlasFlex IN 2025
-  
 */

@@ -101,10 +101,10 @@ function toggleShop() {
   const toggleBtn = document.getElementById("shop-toggle");
   if (shop.classList.contains("hidden")) {
     shop.classList.remove("hidden");
-    toggleBtn.innerText = "🛒 Shop verbergen";
+    toggleBtn.innerText = "🛒 Close shop";
   } else {
     shop.classList.add("hidden");
-    toggleBtn.innerText = "🛒 Shop anzeigen";
+    toggleBtn.innerText = "🛒 Open shop";
   }
 }
 

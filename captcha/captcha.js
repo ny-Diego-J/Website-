@@ -1,7 +1,7 @@
 function checkCaptcha() {
   const response = grecaptcha.getResponse();
   if (!response) {
-    alert("Bitte bestätige das Captcha!");
+    alert("Please confirmm the Captcha!");
     return;
   }
 

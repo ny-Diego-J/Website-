@@ -41,7 +41,7 @@ function buyCursor() {
   if (cookies >= cursorCost) {
     cookies -= cursorCost;
     aps++;
-    cursorCost = Math.floor((cursorCost * upgrade) / 10);
+    cursorCost = Math.floor((cursorCost * upgrade) / 100);
     document.getElementById("cursorCost").innerText = cursorCost;
     update();
   }
@@ -51,7 +51,7 @@ function buyClickUpgrade() {
   if (cookies >= clickCost) {
     cookies -= clickCost;
     apc++;
-    clickCost = Math.floor((clickCost * upgrade) / 10);
+    clickCost = Math.floor((clickCost * upgrade) / 100);
     document.getElementById("clickCost").innerText = clickCost;
     update();
   }
@@ -83,6 +83,8 @@ function prestige() {
   cursorCost = 10;
   clickCost = 15;
   artificialcookies = 0;
+  document.getElementById("cursorCost").innerText = cursorCost;
+  document.getElementById("clickCost").innerText = clickCost;
 
   prestigelevel++;
   update();

@@ -119,7 +119,7 @@ setInterval(() => {
   savekookies = artificialcookies;
   prssave = prs;
   prestigeCostsave = prestigeCost;
-  for (; prestigeCost <= artificialcookies; ) {
+  for (; prestigeCost <= artificialcookies;) {
     artificialcookies -= prestigeCost;
     possibleprestigebuys++;
     prssave++;

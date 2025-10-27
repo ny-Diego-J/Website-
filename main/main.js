@@ -5,14 +5,14 @@ const params = new URLSearchParams(queryString);
 
 const evil = params.get("x");
 const u = params.get("u");
-let z = params.get("ip"); 
+let z = params.get("ip");
 const plushie = document.getElementById("androidico");
 const header = document.querySelector(".heading");
 const title = document.querySelector(".header");
 
 
 async function game() {
-  let ip = z || localStorage.getItem("userIP"); 
+  let ip = z || localStorage.getItem("userIP");
   if (!ip) {
     ip = await getIPValue();
   }
@@ -34,7 +34,7 @@ async function getIP() {
       ip = data.ip;
       console.log(u);
 
-      localStorage.setItem("userIP", ip); 
+      localStorage.setItem("userIP", ip);
       console.log("IP neu gespeichert:", ip);
       document.getElementById("ip").textContent = ip;
       z = ip;
@@ -53,14 +53,14 @@ async function getIP() {
 
 
 async function getIPValue() {
-  let ip = localStorage.getItem("userIP"); 
+  let ip = localStorage.getItem("userIP");
   if (ip) return ip;
 
   try {
     const res = await fetch("https://api.ipify.org?format=json");
     const data = await res.json();
     ip = data.ip;
-    localStorage.setItem("userIP", ip); 
+    localStorage.setItem("userIP", ip);
     return ip;
   } catch (err) {
     console.error(err);
@@ -87,7 +87,7 @@ onscroll = function () {
   } else {
     plushie.style.top = 160 + "px";
     plushie.style.left = 20 + "px";
-    plushie.style.width = 300 + "px";
+    plushie.style.width = 600 + "px";
     plushie.style.transition = "top 0.3s, left 0.3s, width 0.3s";
     plushie.style.transform = "translate(0%, 0%)";
   }

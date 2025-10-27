@@ -1,4 +1,5 @@
 let cookies = 0;
+let upgrade = 150;
 let aps = 0;
 let apc = 1; // Cookies pro Klick
 let cursorCost = 10;
@@ -40,7 +41,7 @@ function buyCursor() {
   if (cookies >= cursorCost) {
     cookies -= cursorCost;
     aps++;
-    cursorCost = Math.floor(cursorCost * 1.5);
+    cursorCost = Math.floor((cursorCost * upgrade) / 100);
     document.getElementById("cursorCost").innerText = cursorCost;
     update();
   }
@@ -50,7 +51,7 @@ function buyClickUpgrade() {
   if (cookies >= clickCost) {
     cookies -= clickCost;
     apc++;
-    clickCost = Math.floor(clickCost * 1.8);
+    clickCost = Math.floor((clickCost * upgrade) / 100);
     document.getElementById("clickCost").innerText = clickCost;
     update();
   }
@@ -60,40 +61,42 @@ function prestigeCostFor(p) {
   return Math.floor((1000 * p) / 4 + 1000);
 }
 
-
-
 function prestige() {
   const costNow = prestigeCostFor(prs);
   if (cookies < costNow) {
-    alert(`You need ${costNow} cookies to prestige! You currently have ${cookies} cookies.`);
+    alert(
+      `You need ${costNow} cookies to prestige! You currently have ${cookies} cookies.`
+    );
     return;
   }
-
 
   const buys = Math.max(1, possibleprestigebuys);
   prs += buys;
 
-
   cookies = 0;
   aps = 0;
-  apc = 1;            
+  apc = 1;
+  upgrade = upgrade * 0.95;
+  if (upgrade < 107) {
+    upgrade = 130;
+  }
   cursorCost = 10;
   clickCost = 15;
   artificialcookies = 0;
+  document.getElementById("cursorCost").innerText = cursorCost;
+  document.getElementById("clickCost").innerText = clickCost;
 
-  
   prestigelevel++;
   update();
   document.getElementById("prestiger").innerText = prestigeCostFor(prs);
   console.log("Prestiged! prs =", prs, "next cost =", prestigeCostFor(prs));
 }
 
-
-
 function update() {
   document.getElementById("counter").innerText = "Androids: " + cookies;
   document.getElementById("aps").innerText = aps;
   document.getElementById("apc").innerText = apc;
+  document.getElementById("prestiger").innerText = prestigeCostFor(prs);
 }
 
 function toggleShop() {
@@ -101,10 +104,10 @@ function toggleShop() {
   const toggleBtn = document.getElementById("shop-toggle");
   if (shop.classList.contains("hidden")) {
     shop.classList.remove("hidden");
-    toggleBtn.innerText = "🛒 Shop verbergen";
+    toggleBtn.innerText = "🛒 Close shop";
   } else {
     shop.classList.add("hidden");
-    toggleBtn.innerText = "🛒 Shop anzeigen";
+    toggleBtn.innerText = "🛒 Open shop";
   }
 }
 
@@ -116,7 +119,7 @@ setInterval(() => {
   savekookies = artificialcookies;
   prssave = prs;
   prestigeCostsave = prestigeCost;
-  for (; prestigeCost <= artificialcookies; ) {
+  for (; prestigeCost <= artificialcookies;) {
     artificialcookies -= prestigeCost;
     possibleprestigebuys++;
     prssave++;
@@ -128,6 +131,7 @@ setInterval(() => {
   console.log("Prestige cost: " + prestigeCost);
   console.log("Prestige level: " + prs);
   console.log("Cookies: " + cookies);
+  console.log("cost increase: " + upgrade + "%");
   update();
   if (prestigelevel >= 10) {
     window.location.href = "../intro/intro.html?x=1";

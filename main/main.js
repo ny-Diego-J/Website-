@@ -87,7 +87,7 @@ onscroll = function () {
   } else {
     plushie.style.top = 160 + "px";
     plushie.style.left = 20 + "px";
-    plushie.style.width = 300 + "px";
+    plushie.style.width = 600 + "px";
     plushie.style.transition = "top 0.3s, left 0.3s, width 0.3s";
     plushie.style.transform = "translate(0%, 0%)";
   }

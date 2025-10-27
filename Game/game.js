@@ -76,9 +76,9 @@ function prestige() {
   cookies = 0;
   aps = 0;
   apc = 1;
-  upgrade = upgrade / 1.1;
-  if (upgrade < 100) {
-    upgrade = 110;
+  upgrade = upgrade * 0.95;
+  if (upgrade < 107) {
+    upgrade = 130;
   }
   cursorCost = 10;
   clickCost = 15;
@@ -130,6 +130,7 @@ setInterval(() => {
   console.log("Prestige cost: " + prestigeCost);
   console.log("Prestige level: " + prs);
   console.log("Cookies: " + cookies);
+  console.log("cost increase: " + upgrade + "%");
   update();
   if (prestigelevel >= 10) {
     window.location.href = "../intro/intro.html?x=1";

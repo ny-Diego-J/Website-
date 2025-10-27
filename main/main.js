@@ -5,47 +5,28 @@ const params = new URLSearchParams(queryString);
 
 const evil = params.get("x");
 const u = params.get("u");
-let z = params.get("ip"); // Changed to let
+let z = params.get("ip"); 
 const plushie = document.getElementById("androidico");
 const header = document.querySelector(".heading");
 const title = document.querySelector(".header");
 
+
 async function game() {
-  let ip = z || getCookie("userIP");
+  let ip = z || localStorage.getItem("userIP"); 
   if (!ip) {
     ip = await getIPValue();
   }
   window.location.href =
-    "../Game/game.html?x=" + (evil || "") + "&ip=" + ip + "&u=2";
+    "../Game/game.html?x=" + (evil || "") + "&u=2";
 }
 
-function setCookie(name, value, days) {
-  let expires = "";
-  if (days) {
-    const date = new Date();
-    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
-    expires = "; expires=" + date.toUTCString();
-  }
-  document.cookie = name + "=" + (value || "") + expires + "; path=/";
-}
-
-function getCookie(name) {
-  const nameEQ = name + "=";
-  const ca = document.cookie.split(";");
-  for (let i = 0; i < ca.length; i++) {
-    let c = ca[i];
-    while (c.charAt(0) == " ") c = c.substring(1, c.length);
-    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-  }
-  return null;
-}
 
 async function getIP() {
-  let ip = getCookie("userIP");
+  let ip = localStorage.getItem("userIP");
   if (ip) {
-    console.log("IP aus Cookie:", ip);
+    console.log("IP aus localStorage:", ip);
     document.getElementById("ip").textContent = ip;
-    z = ip; // Update global z
+    z = ip;
   } else {
     try {
       const res = await fetch("https://api.ipify.org?format=json");
@@ -53,31 +34,33 @@ async function getIP() {
       ip = data.ip;
       console.log(u);
 
-      setCookie("userIP", ip, 7);
+      localStorage.setItem("userIP", ip); 
       console.log("IP neu gespeichert:", ip);
       document.getElementById("ip").textContent = ip;
-      z = ip; // Update global z
+      z = ip;
     } catch (err) {
       document.getElementById("ip").textContent = "Fehler";
       console.error(err);
     }
   }
+
   if (u == 1) {
     console.log("URL-Variable u=1, IP erhalten:", ip);
     console.log("Keine URL-Variable u=1, weiterleiten...");
-    window.location.href = "main.html?x=" + evil + "&ip=" + ip + "&u=2";
+    window.location.href = "main.html?x=" + evil + "&u=2";
   }
 }
 
+
 async function getIPValue() {
-  let ip = getCookie("userIP");
+  let ip = localStorage.getItem("userIP"); 
   if (ip) return ip;
 
   try {
     const res = await fetch("https://api.ipify.org?format=json");
     const data = await res.json();
     ip = data.ip;
-    setCookie("userIP", ip, 7);
+    localStorage.setItem("userIP", ip); 
     return ip;
   } catch (err) {
     console.error(err);
@@ -89,9 +72,11 @@ if (evil == "1") {
   console.log("Evil mode activated");
   document.getElementById("bg").src = "Bild.png";
 }
+
 console.log(u);
 getIP();
 
+// Animation beim Scrollen
 onscroll = function () {
   if (window.scrollY > 200) {
     plushie.style.top = 15 + "px";

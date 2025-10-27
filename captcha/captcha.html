@@ -1,24 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>captcha</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" media="screen" href="captcha.css" />
-    <script src="captcha.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
-  </head>
-  <body>
-    <h1 id="background">Verify you are human</h1>
-    <button onclick="ondklick()">bypass</button>
-    <button
-      class="g-recaptcha"
-      data-sitekey="reCAPTCHA_site_key"
-      data-callback="onSubmit"
-      data-action="submit"
-    >
-      Submit
-    </button>
-  </body>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>captcha</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" type="text/css" media="screen" href="captcha.css" />
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
+<body>
+   <div class="container">
+    <h1>Verify that you are a Human</h1>
+
+    <div class="g-recaptcha" data-sitekey="6LdMHPgrAAAAAMyZH770MT4Rb02GrYaxD1RbG3Ug"></div>
+
+    <button onclick="checkCaptcha()">Continue</button>
+  </div>
+
+  <script src="/captcha/captcha.js"></script>
+</body>
 </html>

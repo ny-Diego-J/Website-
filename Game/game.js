@@ -17,7 +17,7 @@ const params = new URLSearchParams(queryString);
 
 const evil = params.get("x");
 const u = params.get("u");
-const z = params.get("ip");
+const ip = localStorage.getItem("userIP");
 
 function getCookie(name) {
   const nameEQ = name + "=";
@@ -56,26 +56,39 @@ function buyClickUpgrade() {
   }
 }
 
-function prestige() {
-  if (cookies <= prestigeCost - 1) {
-    alert(
-      "You need " +
-        prestigeCost +
-        " cookies to prestige! You currently have " +
-        cookies +
-        " cookies."
-    );
-    return;
-  } else {
-    cookies = 0;
-    aps = 0;
-    apc = 0;
-    cursorCost = 10;
-    clickCost = 15;
-    artificialcookies = 0;
-    for (let i = 1; i <= possibleprestigebuys; ) prs = prs + 1;
-  }
+function prestigeCostFor(p) {
+  return Math.floor((1000 * p) / 4 + 1000);
 }
+
+
+
+function prestige() {
+  const costNow = prestigeCostFor(prs);
+  if (cookies < costNow) {
+    alert(`You need ${costNow} cookies to prestige! You currently have ${cookies} cookies.`);
+    return;
+  }
+
+
+  const buys = Math.max(1, possibleprestigebuys);
+  prs += buys;
+
+
+  cookies = 0;
+  aps = 0;
+  apc = 1;            
+  cursorCost = 10;
+  clickCost = 15;
+  artificialcookies = 0;
+
+  
+  prestigelevel++;
+  update();
+  document.getElementById("prestiger").innerText = prestigeCostFor(prs);
+  console.log("Prestiged! prs =", prs, "next cost =", prestigeCostFor(prs));
+}
+
+
 
 function update() {
   document.getElementById("counter").innerText = "Androids: " + cookies;
@@ -96,8 +109,8 @@ function toggleShop() {
 }
 
 setInterval(() => {
-  document.getElementById("ip").textContent = z;
-  console.log("IP aus Cookie:", z);
+  document.getElementById("ip").textContent = ip;
+  console.log("IP aus Cookie:", ip);
   cookies = cookies + aps;
   artificialcookies += aps;
   savekookies = artificialcookies;

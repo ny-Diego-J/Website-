@@ -78,7 +78,7 @@ function prestige() {
   apc = 1;
   upgrade = upgrade / 1.1;
   if (upgrade < 100) {
-    upgrade = 100;
+    upgrade = 110;
   }
   cursorCost = 10;
   clickCost = 15;

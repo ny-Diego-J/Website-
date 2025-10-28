@@ -73,7 +73,7 @@ console.log(u);
 getIP();
 
 // Animation beim Scrollen
-onscroll = function () {
+onscroll = function() {
   if (window.scrollY > 200) {
     plushie.style.top = 15 + "px";
     plushie.style.left = 50 + "%";
@@ -83,7 +83,7 @@ onscroll = function () {
   } else {
     plushie.style.top = 160 + "px";
     plushie.style.left = 20 + "px";
-    plushie.style.width = 600 + "px";
+    plushie.style.width = 40 + "%";
     plushie.style.transition = "top 0.3s, left 0.3s, width 0.3s";
     plushie.style.transform = "translate(0%, 0%)";
   }

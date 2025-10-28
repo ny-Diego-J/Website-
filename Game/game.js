@@ -6,7 +6,7 @@ let cursorCost = 10;
 let clickCost = 15;
 let prs = 1; // Prestige level
 let artificialcookies = 0; // Artificial cookies from prestige
-prestigeCost = (1000 * prs) / 4 + 1000; // Cost for next prestige level
+let prestigeCost = (1000 * prs) / 4 + 1000; // Cost for next prestige level
 let prestigelevel = 0; // Prestige level
 let possibleprestigebuys = 0; // Possible prestige buys
 let savekookies = 0; // Cookies at last prestige
@@ -73,12 +73,15 @@ function prestige() {
   const buys = Math.max(1, possibleprestigebuys);
   prs += buys;
 
+  prestigelevel++;
   cookies = 0;
-  aps = 0;
+  aps = prestigelevel;
   apc = 1;
-  upgrade = upgrade * 0.95;
+
   if (upgrade < 107) {
-    upgrade = 130;
+    upgrade = 107;
+  } else {
+    upgrade = upgrade * 0.95;
   }
   cursorCost = 10;
   clickCost = 15;
@@ -86,7 +89,7 @@ function prestige() {
   document.getElementById("cursorCost").innerText = cursorCost;
   document.getElementById("clickCost").innerText = clickCost;
 
-  prestigelevel++;
+
   update();
   document.getElementById("prestiger").innerText = prestigeCostFor(prs);
   console.log("Prestiged! prs =", prs, "next cost =", prestigeCostFor(prs));

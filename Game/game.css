@@ -5,11 +5,14 @@ body {
   background: linear-gradient(to bottom, #f8b500, #fceabb);
   height: 100vh;
   margin: 0;
+  overflow: hidden;
 }
 
 .android {
   width: 100px;
   height: 100px;
+  margin-left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 h1 {
@@ -21,6 +24,7 @@ h1 {
   border: none;
   background: none;
   cursor: pointer;
+  left: 0;
   transition: transform 0.1s;
 }
 

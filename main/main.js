@@ -10,16 +10,13 @@ const plushie = document.getElementById("androidico");
 const header = document.querySelector(".heading");
 const title = document.querySelector(".header");
 
-
 async function game() {
   let ip = z || localStorage.getItem("userIP");
   if (!ip) {
     ip = await getIPValue();
   }
-  window.location.href =
-    "../Game/game.html?x=" + (evil || "") + "&u=2";
+  window.location.href = "../Game/game.html?x=" + (evil || "") + "&u=2";
 }
-
 
 async function getIP() {
   let ip = localStorage.getItem("userIP");
@@ -51,7 +48,6 @@ async function getIP() {
   }
 }
 
-
 async function getIPValue() {
   let ip = localStorage.getItem("userIP");
   if (ip) return ip;
@@ -67,10 +63,10 @@ async function getIPValue() {
     return null;
   }
 }
-
+console.log("Evil parameter:", evil);
 if (evil == "1") {
   console.log("Evil mode activated");
-  document.getElementById("bg").src = "Bild.png";
+  document.getElementById("bg").src = "../img/Evil.png";
 }
 
 console.log(u);

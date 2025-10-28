@@ -8,6 +8,10 @@ body {
   overflow-x: hidden;
 }
 
+.whitetext {
+  color: whitesmoke;
+}
+
 #ourfarmers::before {
   content: "";
   display: block;
@@ -23,8 +27,8 @@ body {
   margin: 1% 1% 1% 1%;
 }
 
-h1,
-p {
+p,
+ul {
   font-family: Arial, Helvetica, sans-serif;
   color: #08c725;
 }

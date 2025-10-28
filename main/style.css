@@ -154,9 +154,8 @@ div {
 
 .footer {
   position: flex;
-  width: 100%;
-  margin: 0%;
-  margin-right: 0px;
+  width: 98%;
+  margin: 1%;
   height: min-content;
   background-color: #212529;
   color: white;

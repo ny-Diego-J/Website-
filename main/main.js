@@ -73,7 +73,7 @@ console.log(u);
 getIP();
 
 // Animation beim Scrollen
-onscroll = function() {
+onscroll = function () {
   if (window.scrollY > 200) {
     plushie.style.top = 15 + "px";
     plushie.style.left = 50 + "%";

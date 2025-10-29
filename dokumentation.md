@@ -1,4 +1,4 @@
-<p>1.Tag - 18.08.2025</p>
+1.Tag - 18.08.2025
 
     Phase: Wir sind in dieser Woche in der Planungsphase.
 
@@ -114,11 +114,21 @@
 
     Aufgaben: Bugs finden und vorhandene verbessern. Versuchen Bootstrap zu benutzen.
 
-    Neusten Erreignisse für unser Projekt:
+    Neusten Erreignisse:
+    Wir haben eifach generelle bug gefixt.
 
+8.Tag - 29.10.2025
 
-Eddits for next Week:
-    - index.html wo einen direkt umleitet zu intro👍
-    - All website -> in to one folder
-    - Fix ip grabber
-    - 
+    Phase:
+    Realisieren / Kontrollieren
+
+    Ziele:
+    Wir haben generlle bugs gefixt und auch noch weiter verbesserungen hinzugefügt.
+
+    Aufgaben:
+    Game verbesser und bugs fixen.
+
+    Neusten Erreignisse:
+    Wir haben die website jetzt online unter der Url: android.Glas-flex.ch und das Captcha Funktioniert jetzt.
+
+Eddits for next Week: - index.html wo einen direkt umleitet zu intro👍 - All website -> in to one folder - Fix JavaScripttipt grabber -

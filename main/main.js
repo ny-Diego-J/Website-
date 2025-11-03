@@ -74,7 +74,7 @@ getIP();
 
 // Animation beim Scrollen
 onscroll = function () {
-  if (window.scrollY > 200) {
+  if (window.scrollY > 50) {
     plushie.style.top = 15 + "px";
     plushie.style.left = 50 + "%";
     plushie.style.width = 100 + "px";
